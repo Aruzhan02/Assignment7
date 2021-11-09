@@ -99,6 +99,7 @@ public:
     string getPreprocessed_text(){
         return this->text2;
     }
+
 };
 
 
