@@ -68,7 +68,37 @@ public:
         birdene1.clear();
         this->text2 = answer;
     }
-
+    int search_word(const string& str){
+        string soz = this->text2;
+        string birdene2 = "";
+        int smth = 1;
+        for(int i = 0; i < soz.size(); ++i){
+            if(soz[i] == '\n'){
+                smth++;
+                if(birdene2 == str){
+                    return smth;
+                }
+                birdene2.clear();
+                continue;
+            }
+            if(soz[i] == ' '){
+                if(birdene2 == str){
+                    return smth;
+                }
+                birdene2.clear();
+            }
+            else{
+                birdene2 += soz[i];
+            }
+        }
+        if(birdene2 == str){
+            return smth;
+        }
+        return -1;
+    }
+    string getPreprocessed_text(){
+        return this->text2;
+    }
 };
 
 
